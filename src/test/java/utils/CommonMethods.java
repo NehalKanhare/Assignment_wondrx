@@ -17,12 +17,7 @@ public class CommonMethods {
         return element;
     }
 
-	/*
-	 * public static void highlightElement(WebDriver driver, WebElement element) {
-	 * JavascriptExecutor js = (JavascriptExecutor) driver;
-	 * js.executeScript("arguments[0].style.border='3px solid red'", element);
-	 */
-        
+	
     
     public static void highlightElement(WebDriver driver, WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
