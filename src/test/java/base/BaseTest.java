@@ -16,7 +16,7 @@ public class BaseTest {
     public void setUp(@Optional("chrome") String browser) {
         driver = DriverFactory.initDriver(browser);
         driver.manage().window().maximize();
-        // Optional: Move to test class if not always visiting About
+        
         driver.get("https://www.wondrx.com/about");
     }
 
