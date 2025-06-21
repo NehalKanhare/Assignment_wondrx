@@ -22,22 +22,22 @@ public class CommonMethods {
     public static void highlightElement(WebDriver driver, WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        // 👁️‍🗨️ Scroll to the element smoothly
+        // Scroll to the element smoothly
         js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
 
-        // ⏱️ Small pause so it’s visually observable
+        // Small pause so it’s visually observable
         try {
             Thread.sleep(1000); // 1 second pause
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        // 🔴 Highlight with red border
+        // Highlight with red border
         js.executeScript("arguments[0].style.border='3px solid red'", element);
 
-        // Optional: Keep the highlight visible longer
+        //1 second pause after highlighting
         try {
-            Thread.sleep(1000); // 1 second pause after highlighting
+            Thread.sleep(1000); 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -46,7 +46,6 @@ public class CommonMethods {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> elements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
         
-        // Optional: Highlight each element
         for (WebElement element : elements) {
             highlightElement(driver, element);
         }
@@ -69,7 +68,6 @@ public class CommonMethods {
     }
 
 	static WebElement waitAndHighlight(WebDriver driver, By locator) {
-		// TODO Auto-generated method stub
 		return null;
 	}
     
